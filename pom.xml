@@ -4,19 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>dk.tbsalling.ais</groupId>
-	<artifactId>plotter</artifactId>
+	<artifactId>aismessages-aws-lambda</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>plotter</name>
-	<description>Demo project for Spring Boot</description>
-
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.3.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
+	<name>aismessages-aws-lambda</name>
+	<description>Serverless AIS decoding using AWS lambda</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,43 +17,33 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<licenses>
+		<license>
+			<name>Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)</name>
+			<url>http://creativecommons.org/licenses/by-nc-sa/3.0/</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<organization>
+		<name>Thomas Borg Salling</name>
+		<url>http://tbsalling.dk</url>
+	</organization>
+
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>dk.tbsalling</groupId>
-			<artifactId>aisutils</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.gluonhq</groupId>
-			<artifactId>maps</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>dk.tbsalling</groupId>
-			<artifactId>aisutils</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<artifactId>aismessages</artifactId>
+			<version>2.2.2</version>
 		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
+	<developers>
+		<developer>
+		  <id>tbsalling</id>
+		  <name>Thomas Borg Salling</name>
+		  <email>tbsalling@tbsalling.dk</email>
+		</developer>
+	</developers>
 
 </project>
