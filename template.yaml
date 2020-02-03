@@ -19,25 +19,28 @@ Resources:
       Name: "aismessages"
       Description: "Decoding of NMEA armoured AIS messages"
 
-  apiGatewayDeployment:
-    Type: "AWS::ApiGateway::Deployment"
-    DependsOn:
-      - "apiGatewayRootMethod"
-    Properties:
-      RestApiId: !Ref "apiGateway"
-      StageName: !Ref "apiGatewayStageName"
-
   apiGatewayStage:
     Type: "AWS::ApiGateway::Stage"
     Properties:
       DeploymentId: !Ref "apiGatewayDeployment"
       RestApiId: !Ref "apiGateway"
+      StageName: !Ref "apiGatewayStageName"
       MethodSettings:
         - DataTraceEnabled: true
           HttpMethod: "*"
           LoggingLevel: INFO
           ResourcePath: "/*"
           MetricsEnabled: true
+          ThrottlingRateLimit: 1
+          ThrottlingBurstLimit: 1
+
+  apiGatewayDeployment:
+    Type: "AWS::ApiGateway::Deployment"
+    DependsOn:
+      - "apiGatewayRootMethod"
+    Properties:
+      RestApiId: !Ref "apiGateway"
+      #StageName: !Ref "apiGatewayStageName"
 
   apiGatewayRootMethod:
     Type: "AWS::ApiGateway::Method"
